@@ -22,6 +22,9 @@ const personalMovieDB = {
         return res;  
 
     },
+    start: function(){
+        this.count = this.checkedInputData("Сколько фильмов вы уже просмотрели?");
+    },
     detectPersonalLevel: function(){
         if (personalMovieDB.count>0 && personalMovieDB.count<10){
             console.log ('Просмотрено мало фильмов');
@@ -68,8 +71,7 @@ const personalMovieDB = {
     }
 };
 
-personalMovieDB.count = +personalMovieDB.checkedInputData("Сколько фильмов вы уже просмотрели?");
-
+personalMovieDB.start();
 personalMovieDB.rememberMyFilms();
 personalMovieDB.detectPersonalLevel();
 personalMovieDB.writeYourGenres();
