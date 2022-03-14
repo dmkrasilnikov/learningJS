@@ -76,8 +76,27 @@ window.addEventListener('DOMContentLoaded', ()=>{
             }
         }
     };
-    
-    // console.log(new Date());
     customeTimer.make('.promotion__timer', '2022-03-16');
+
+
+    //Modal
+    const modalBtn = document.querySelectorAll('[data-modal]'),
+          modalCloseBtn = document.querySelectorAll('[data-modal-close]'),
+          modal = document.querySelector('.modal');
+    modalBtn.forEach(function (item){
+       // alert(1);
+        item.addEventListener('click', showModal);
+    });
+    modalCloseBtn.forEach(function (item){
+        item.addEventListener('click', closeModal);
+    });
+    function showModal(){
+        
+        modal.style.display = 'block';
+    }
+    function closeModal(){
+     //   alert (2);
+        modal.style.display = 'none';
+    }
 });
 
